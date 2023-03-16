@@ -1,0 +1,146 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<h1>- Exercice du 15/03/23 - Symfony -</h1>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">1. Création d'un projet Symfony.</h5>
+        <p class="card-text">=> Commande symfony new projet (nom du projet) –full</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">2. Créer une page d'accueil en Symfony vous affichez ce que vous voulez :</h5>
+        <p class="card-text">symfony console make:contrôler => entrer => A la question suivante donner le nom du dossier
+        </p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">Expliquer à quoi correspond :</h5>
+        <p class="card-text">- l'abstract controller: l'abstract controller fournit une méthode pour hériter la classe
+            et accéder à l' ensemble
+            des propriétés publique et protégée de la classe abstractController effectué une redirection.
+            <br>
+            - l'objet Request : formuler une requet.
+            <br>
+            L'objet Request est une classe qui contient $_GET $_POST … (Un objet Request contient des informations sur
+            la
+            demande du client)
+            <br>
+            - l'objet Response : Renvoie un objet de type Response qui va renvoyer les caractéristiques vers la vue twig
+            (côté
+            client)permet de faire un return qui renvoi une réponse côté client dans le navigateur
+            <br>
+            - Route : La configuration de routage définit l'action à exécuter pour chaque URL entrante permet de diriger
+            un url
+            vers une méthode de controller c est l action
+            <br>
+            - Les 2 fonctionnalités de Composer :
+            Composer est un gestionnaire de dépendances au niveau de l'application pour PHP. Par dépendance, on entend
+            simplement les bibliothèques/paquets dont dépend votre application. En plus de gérer les dépendances,
+            Composer
+            chargera automatiquement les fichiers nécessaires à l'application (autoload).
+        </p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">3. Ajouter bootstrap sur votre site</h5>
+        <p class="card-text">C'est fait il y a juste a regarder les liens dans le code et la vue du site</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">4. Ajouter vos css sur votre site</h5>
+        <p class="card-text">C'est fait il y a juste a regarder les liens dans le code et la vue du site (couleur rouge et bleu)</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">5. Ajouter vos js sur votre site</h5>
+        <p class="card-text">C'est fait il y a juste a regarder dans la console en faisant inspecter.</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">6. Créé une page Jeu présentant un formulaire</h5>
+        <p class="card-text">- Le principe: sous forme de formulaire nous avons une page demandant de deviner un nombre entre 0 et 100. L'utilisateur insére le nombre. <br> 
+            - Si il trouve la bonne réponse on lui dit c'est gagné si non c'est perdu. <br>
+            - Le formulaire affiche un champs de type number contenant un nombre et un champ submit affichant jouer. Ajouter un libeller affichant "deviner un nombre entre 0 et 100". une contrainte empêche d'insérer un nombre plus grand que 100 et inférieur à 0. <br>
+            - Ajouter bootstrap au formulaire <br>
+            - Ajouter un header, une barre de navigation <br>
+            - Ajouter les liens vers les 2 pages</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">7. créé un espace membre. </h5>
+        <p class="card-text"> - Ajouter les liens vers les pages</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">8. Créé un user avec le role Admin </h5>
+        <p class="card-text"> - Ajouter les liens vers les pages</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">9. Créé un CRUD sur le User uniquement accessible par l'Admin </h5>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">10. Commentez la totalité des fichiers généré par le CRUD </h5>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">11. Création d'entité et de CRUD uniquement accessible par l'admin </h5>
+        <p class="card-text"> Créé une entité Produit (titre, description) <br>
+        Créé une entité commentaire (titre , description, user_id, produit_id) <br>
+        : User_id etant un lien <br>
+        : Produit_id etant un lien</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">12. Créé un Crud dans lequel vous ne gardez que l'affichage des produits accessible par tout le monde. </h5>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">13. créé une page affichant  </h5>
+        <p class="card-text"> - les articles <br>
+ - les commentaires lié à l'article <br>
+ - un formulaire proposant d'ajouter un commentaire.
+</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+<div class="card mb-3">
+    <div class="card-body">
+        <h5 class="card-title">14. Rendre le formulaire de commentaire uniquement visible par les inscrits 
+ </h5>
+        <p class="card-text"><small class="text-muted"></small></p>
+    </div>
+</div>
+
+
+{% endblock %}
