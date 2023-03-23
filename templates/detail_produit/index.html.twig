@@ -1,28 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Catalogue{% endblock %}
+{% block title %}Detail Produit!{% endblock %}
 
 {% block body %}
-    <h1>Catalogue</h1>
-
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        {% for produit in produits %}
-
-            <div class="col">
+<h1>Page detail produit</h1>
+<div class="col">
                 <div class="card">
-                <img src="{{ asset('img/') ~ produit.imageName}}" class="card-img-top" alt="...">
+                <img src="..." class="card-img-top" alt="...">
                 <div class="card-body">
                     <p class="card-text">{{ produit.id }} </p>
                     <h5 class="card-title">{{ produit.Nom }}</h5>
                     <p class="card-text">{{ produit.Description }} </p>
                     <p class="card-text">{{ produit.Prix }} </p>
                     <button type="button" class="btn btn-primary">Ajouter au panier</button>
-                    <a href="{{ path('app_detail_produit', {'id': produit.id}) }}"><button type="button" class="btn btn-primary">Detail</button>
-                    </a>
+                    <a href="app_commentaires_new"><button type="button" class="btn btn-primary">Ajouter un commentaire</button></a>
                 </div>
                 </div>
             </div> 
-
-         {% endfor %}
-
+            
 {% endblock %}
+

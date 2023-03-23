@@ -25,7 +25,7 @@ class JeuType extends AbstractType
                             'min' => 0,
                             'max' => 100,
                             'notInRangeMessage' =>
-                            'Vous devez insÃ©rer un
+                            'Vous devez insérer un
                             nombre entre {{ min }} et  {{ max }}',
                         ])
                     ]
