@@ -24,9 +24,11 @@ class JeuController extends AbstractController
             
             $data['alea']=rand(0,100);
 
+                
             if ($data['alea'] == $data['number']){
                 $data['reponse']="vous avez gagné, c'est bien joué";
             }else{
+            
                 $data['reponse']="vous avez perdu, dommage !!";
             }
 
