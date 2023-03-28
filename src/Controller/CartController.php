@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Produits;
+use App\Repository\ProduitsRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -14,35 +15,65 @@ class CartController extends AbstractController
 
     // page d'ajout de produit
     #[Route('/add/{id}', name: 'app_cart_add')]
-    public function index($id, Produits $produit, RequestStack $session
-    ): Response {
+    public function index($id, RequestStack $session): Response {
         // cree ou modifier la variable session set
 
         // créé mon panier
         $panier = $session->getSession()->get("panier", []);
 
+//        var_dump($panier);
+        if (empty($panier[$id])) {
+    //        var_dump($panier);
+            $panier[$id] = 0;
+    //        var_dump($panier);
+        }
+
         $panier[$id]++;
+//        var_dump($panier);
 
-        $panier = $session->getSession()->set("panier", $panier);
+        $session->getSession()->set("panier", $panier);
+      //  var_dump($panier);
 
-        dd($session->getSession()->get("panier,"));
+
+        dd($panier);
 
         // dd($produit);
         return $this->render('cart/index.html.twig', [
-            'controller_name' => 'CartController',
+            'panier' => $panier,
         ]);
     }
 
     // page pour visualiser notre panier
     #[Route('/show', name: 'app_cart_show')]
-    public function show(RequestStack $session): Response
+    public function show(ProduitsRepository $produitsRepository, RequestStack $session): Response
     {
         //get pour recuperer la session
-        dd($session->getSession()->get("panier"));
 
+        $session->getSession()->get("panier");
+        $panier=$session->getSession()->get("panier");
 
+        // panier a alimenter de sorte d'avoir 
+        // toutes les infos du produits
+
+        $panier_complet=[];
+        $total = 0;
+
+        foreach ($panier as $key => $value){
+            $produit_encours= $produitsRepository->find($key);
+
+            $panier_complet[]=[
+                'produits'=> $produitsRepository ->find($key) ,
+                'quantite' => $value,
+                'total' => ($produit_encours->getPrix()*$value)
+            ];
+
+            $total=$total+($produit_encours->getPrix()*$value);
+        }
+        // dd($panier_complet);
         return $this->render('cart/index.html.twig', [
-            'controller_name' => 'CartController',
+            'panier' => $panier_complet,
+            'total' => $total
+            
         ]);
     }
 

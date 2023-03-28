@@ -6,13 +6,14 @@
 <h1>Page detail produit</h1>
 <div class="col">
                 <div class="card">
-                <img src="..." class="card-img-top" alt="...">
+                <img src="{{ asset('img/') ~ produit.imageName}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <p class="card-text">{{ produit.id }} </p>
                     <h5 class="card-title">{{ produit.Nom }}</h5>
                     <p class="card-text">{{ produit.Description }} </p>
                     <p class="card-text">{{ produit.Prix }} </p>
-                    <button type="button" class="btn btn-primary">Ajouter au panier</button>
+                    <a href="{{ path('app_cart_add', {'id': produit.id }) }}">
+                    <button type="button" class="btn btn-primary">Ajouter au panier</button></a>
                     <a href="app_commentaires_new"><button type="button" class="btn btn-primary">Ajouter un commentaire</button></a>
                 </div>
                 </div>

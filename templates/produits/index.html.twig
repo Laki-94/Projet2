@@ -1,28 +1,42 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Catalogue{% endblock %}
-
+{% block title %}
+    Catalogue
+{% endblock %}
 {% block body %}
-    <h1>Catalogue</h1>
-
+    <h1>
+        Catalogue
+    </h1>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for produit in produits %}
-
             <div class="col">
                 <div class="card">
-                <img src="{{ asset('img/') ~ produit.imageName}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <p class="card-text">{{ produit.id }} </p>
-                    <h5 class="card-title">{{ produit.Nom }}</h5>
-                    <p class="card-text">{{ produit.Description }} </p>
-                    <p class="card-text">{{ produit.Prix }} </p>
-                    <button type="button" class="btn btn-primary">Ajouter au panier</button>
-                    <a href="{{ path('app_detail_produit', {'id': produit.id}) }}"><button type="button" class="btn btn-primary">Detail</button>
-                    </a>
+                    <img src="{{ asset('img/') ~ produit.imageName }}" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{ produit.id }}
+                            </p>
+                            <h5 class="card-title">
+                                {{ produit.Nom }}
+                            </h5>
+                            <p class="card-text">
+                                {{ produit.Description }}
+                            </p>
+                            <p class="card-text">
+                                {{ produit.Prix }}
+                            </p>
+                            <a href="{{ path('app_cart_add', {'id': produit.id }) }}">
+                                <button type="button" class="btn btn-primary">
+                                    Ajouter au panier
+                                </button>
+                            </a>
+                            <a href="{{ path('app_detail_produit', {'id': produit.id}) }}">
+                                <button type="button" class="btn btn-primary">
+                                    Detail
+                                </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div> 
-
-         {% endfor %}
-
-{% endblock %}
+            {% endfor %}
+        {% endblock %}
+        
